@@ -22,8 +22,10 @@ public class User {
     @Indexed(unique = true, collation = "en_US")
     private String email;
 
-    private String password;
+    @Indexed(unique = true)
     private String phoneNumber;
+
+    private String password;
     private Role role;
     private boolean isEnabled;
 
