@@ -1,0 +1,52 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.5'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+description = 'backend'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// ---- SPRING CORE ----
+	implementation 'org.springframework.boot:spring-boot-starter'
+
+	// ---- SPRING WEB (for REST API) ----
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// ---- MONGODB ----
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// ---- VALIDATION ----
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// ---- DEVTOOLS (for auto-restart in dev) ----
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// ---- LOMBOK ----
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// ---- TESTING ----
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo.spring30x:4.11.0' // MongoDB embedded for testing
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
