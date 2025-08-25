@@ -19,7 +19,9 @@ public class Transaction {
 
     private TransactionType transactionType;
     private LocalDateTime time;
-    private Integer productId;
     private Integer quantity;
+
+    private String userId;
+    private String productId;
 
 }
