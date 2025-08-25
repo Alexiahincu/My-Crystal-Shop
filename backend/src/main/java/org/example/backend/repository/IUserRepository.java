@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface IUsersRepository extends MongoRepository<User, String> {
+public interface IUserRepository extends MongoRepository<User, String> {
     Optional<User> findByPhoneNumber(String phoneNumber);
     Optional<User> findByEmail(String email);
-    List<User> findAllByRole(String role);
+    List<User> findByRole(String role);
 }
