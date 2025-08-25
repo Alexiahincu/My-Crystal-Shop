@@ -6,5 +6,5 @@ import org.example.backend.model.TransactionType;
 import org.example.backend.model.User;
 
 public interface ITransactionService {
-    void execute(Product product, Transaction transaction);
+    void execute(Transaction transaction);
 }
