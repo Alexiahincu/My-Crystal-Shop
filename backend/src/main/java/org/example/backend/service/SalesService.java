@@ -31,6 +31,7 @@ public class SalesService implements ITransactionService {
             throw new IllegalArgumentException("Transaction type must be SALE.");
         }
 
+        // test comment
         if(transaction.getQuantity() <= 0) {
             throw new IllegalArgumentException("Transaction quantity must be greater than zero.");
         }
